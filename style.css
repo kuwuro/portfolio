@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+:root {
+    --bg1: #8e8eeb;
+    --bg2: #e3ade9;
+    --clickRipple: rgba(255, 255, 255, 0.637);
+    --text: rgb(22, 22, 22);
+}
+
+.pointernone{
+    pointer-events: none;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text);
+    transition: 800ms;
+}
+
+body.active{
+    color: white;
+    transition: 800ms;
+}
+
+.mode-tog{
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    z-index: 10;
+    border-radius: 50%;
+    transition: 800ms;
+    opacity: 0;
+}
+
+.mode-tog.active{
+    color: white;
+    transition: 800ms;
+}
+
+.mode-tog.visible{
+    opacity: 1;
+}
+
+.lang-tog{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 110px;
+    top: 50px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    z-index: 10;
+    border-radius: 50%;
+    transition: color 800ms transform 0.3s;
+    opacity: 0;
+}
+
+.lang-tog.active{
+    color: white;
+    transition: color 800ms transform 0.3s;
+}
+
+.lang-tog.visible{
+    opacity: 1;
+    transition: color 800ms transform 0.3s;
+}
+
+.lang-tog:hover{
+    transform: scale(1.2);
+}
+
+.container{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 50px;
+    top: 50px;
+    width: 20px;
+    height: 20px;
+}
+
+.dark-mode{
+    position: relative;
+    transform: scale(0);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 250vw;
+    height: 250vw;
+    border-radius: 50%;
+    background-color: #1a1a1a;
+    transition: 800ms ease-in-out;
+    display: flex;
+    flex: 0 0 auto;
+}
+
+.dark-mode.active{
+    transform: scale(1);
+    transition: 800ms ease-in-out;
+}
+
+.gradient-background {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.background-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--bg1), var(--bg2)),
+                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.8) 10%, transparent 60%),
+                radial-gradient(circle at 80% 40%, rgba(255, 255, 255, 0.6) 10%, transparent 70%);
+    background-size: 300% 300%;
+    animation: AnimationName 5s ease infinite;
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.click-ripple {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 5px solid var(--clickRipple);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    animation: clickRippleAnimation 1.2s ease-out;
+}
+
+@keyframes clickRippleAnimation {
+    to {
+        width: 600px;
+        height: 600px;
+        opacity: 0;
+    }
+}
+
+@keyframes randomRippleAnimation {
+    to {
+        width: 200px;
+        height: 200px;
+        opacity: 0;
+    }
+}
+
+.small-ripple {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    border: 1px solid var(--clickRipple);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    animation: smallRippleAnimation 1.5s ease-out;
+}
+
+@keyframes smallRippleAnimation {
+    to {
+        width: 20px;
+        height: 20px;
+        opacity: 0;
+    }
+}
+
+
+#title{
+    position: absolute; 
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    text-align: center;
+}
+
+#title.active{
+    transition: 1000ms ease-in-out;
+}
+
+#title h1{
+    font-family: 'Poppins', sans-serif;
+    font-size: 5rem;
+    font-weight: 700;
+    letter-spacing: 10px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    z-index: 10;
+}
+
+#enricAr span {
+    position: relative;
+    display: inline-block;
+    animation-delay: calc(.1s * var(--i));    
+}
+
+@keyframes waviy {
+    0%, 100% {
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        transform: translate3d(0, -8px, 0);
+    }
+}
+
+#title h2{
+    margin: 0px;
+    padding: 0px;
+    user-select: none;
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+#info {
+    display: block;
+    user-select: none;
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    margin-top: 50px;
+    z-index: 10;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+#info.active {
+    opacity: 1;
+}
+
+#info span{
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+#socials{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.3em;
+    margin-top: 20px;
+}
+
+#socials a{
+    text-decoration: none;
+    font-size: 3em;
+    transition: color 800ms, transform 0.4s;
+}
+
+.socialIcon{
+    cursor: pointer;
+    color: var(--text);
+    z-index: 10;
+    transition: color 800ms, transform 0.4s;
+    opacity: 0;
+}
+
+.socialIcon:hover{
+    transform: scale(1.1) translateY(-5px);
+}
+
+.socialIcon.active{
+    color: white;
+    transition: color 800ms, transform 0.4s;
+}
+
+.socialIcon.active:hover{
+    transform: scale(1.1) translateY(-5px);
+}
+
+.btn1{
+    animation: showIn 0.7s ease;
+    animation-delay: 400ms;
+    animation-fill-mode: forwards;
+}
+
+.btn2{
+    animation: showIn 0.7s ease;
+    animation-delay: 500ms;
+    animation-fill-mode: forwards;
+}
+
+.btn3{
+    animation: showIn 0.7s ease;
+    animation-delay: 600ms;
+    animation-fill-mode: forwards;
+}
+
+.btn4{
+    animation: showIn 0.7s ease;
+    animation-delay: 700ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes showIn {
+    0% {
+        transform: translate3d(0, -25px, 0);
+        opacity: 0;
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+
+@media screen and (max-width: 600px) {    
+    .mode-tog {
+        right: 20px;
+        top: 20px;
+        width: 15px;
+        height: 15px;
+        font-size: 1.5em;
+    }
+
+    .container {
+        right: 20px;
+        top: 20px;
+    }
+
+    .dark-mode{
+        width: 250vh;
+        height: 250vh;
+    }
+
+    #title{
+        max-width: 80%;
+    }
+
+    #title h1 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 2.5rem;
+        letter-spacing: 5px;
+    }
+
+    #title h1 span {
+        white-space: nowrap;
+        margin: 0 3px;
+    }
+
+    #title h2 {
+        font-size: 0.8em;
+        margin-top: 5px;
+    }
+
+    #info span {
+        font-size: 1em;
+    }
+
+    #info p{
+        font-size: 0.8em;
+    }
+
+    #socials a {
+        font-size: 2em;
+    }
+}
