@@ -171,7 +171,7 @@ desktopfolio.addEventListener('click', () => {
     overlay.style.height = "100%";
     overlay.style.backgroundColor = "black";
     overlay.style.opacity = "0";
-    overlay.style.transition = "opacity 0.5s";
+    overlay.style.transition = "opacity 1.5s";
     document.body.appendChild(overlay);    
     function fadeToBlack() {
         overlay.style.opacity = "1";
