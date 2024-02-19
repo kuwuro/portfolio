@@ -82,6 +82,33 @@ body.active{
     transform: scale(1.2);
 }
 
+#desktopfolio{
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 170px;
+    top: 50px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    z-index: 10;
+    border-radius: 50%;
+    transition: 800ms;
+    opacity: 0;
+}
+
+#desktopfolio.active{
+    color: white;
+    transition: 800ms;
+}
+
+#desktopfolio.visible{
+    opacity: 1;
+    transition: 800ms;
+}
+
 .container{
     position: absolute;
     display: flex;

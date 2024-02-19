@@ -1,5 +1,6 @@
 let modeToggle = document.querySelector('.mode-tog');
 let langToggle = document.querySelector('.lang-tog');
+let desktopfolio = document.getElementById('desktopfolio');
 let darkMode = document.querySelector('.dark-mode');
 let body = document.querySelector('body');
 let socials = document.querySelectorAll('.socialIcon');
@@ -28,6 +29,7 @@ window.addEventListener('load', () => {
         darkMode.classList.add('active');
         modeToggle.classList.add('active');
         langToggle.classList.add('active');
+        desktopfolio.classList.add('active');
         body.classList.add('active');
         socials.forEach((socialIcon) => {
             socialIcon.classList.toggle('active');
@@ -41,6 +43,7 @@ window.addEventListener('load', () => {
                 document.getElementById('title').classList.toggle('active');
                 /* langToggle.classList.add('visible'); */
                 modeToggle.classList.add('visible');
+                desktopfolio.classList.add('visible');
                 moveDivAfterLoadAnimations();                                 
                 setTimeout(() => {
                     generateRandomRipple();                                      
@@ -135,6 +138,7 @@ modeToggle.addEventListener('click', () => {
     darkMode.classList.toggle('active');
     modeToggle.classList.toggle('active');
     langToggle.classList.toggle('active');
+    desktopfolio.classList.toggle('active');
     body.classList.toggle('active');
     socials.forEach((socialIcon) => {
         socialIcon.classList.toggle('active');
@@ -161,4 +165,27 @@ function copyMail() {
 
 langToggle.addEventListener('click', () => {
     langToggle.innerHTML = langToggle.innerHTML === '<h3>ENG</h3>' ? '<h3>ESP</h3>' : '<h3>ENG</h3>';
+});
+
+desktopfolio.addEventListener('click', () => {
+    const overlay = document.createElement("div");
+    overlay.style.margin = "0";
+    overlay.style.padding = "0";
+    overlay.style.position = "fixed";
+    overlay.style.zIndex = "2000";
+    overlay.style.top = "0";
+    overlay.style.left = "0";
+    overlay.style.width = "100%";
+    overlay.style.height = "100%";
+    overlay.style.backgroundColor = "black";
+    overlay.style.opacity = "0";
+    overlay.style.transition = "opacity 0.5s";
+    document.body.appendChild(overlay);    
+    function fadeToBlack() {
+        overlay.style.opacity = "1";
+    }    
+    setTimeout(fadeToBlack, 0);    
+    overlay.addEventListener("transitionend", function () {
+        window.location.href = 'https://portfolio-desktop-navy.vercel.app';
+    });
 });
