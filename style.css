@@ -52,36 +52,6 @@ body.active{
     opacity: 1;
 }
 
-.lang-tog{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    right: 110px;
-    top: 50px;
-    cursor: pointer;
-    width: 20px;
-    height: 20px;
-    z-index: 10;
-    border-radius: 50%;
-    transition: color 800ms transform 0.3s;
-    opacity: 0;
-}
-
-.lang-tog.active{
-    color: white;
-    transition: color 800ms transform 0.3s;
-}
-
-.lang-tog.visible{
-    opacity: 1;
-    transition: color 800ms transform 0.3s;
-}
-
-.lang-tog:hover{
-    transform: scale(1.2);
-}
-
 #desktopfolio{
     font-size: 2em;
     display: flex;

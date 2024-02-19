@@ -1,5 +1,4 @@
 let modeToggle = document.querySelector('.mode-tog');
-let langToggle = document.querySelector('.lang-tog');
 let desktopfolio = document.getElementById('desktopfolio');
 let darkMode = document.querySelector('.dark-mode');
 let body = document.querySelector('body');
@@ -28,7 +27,6 @@ window.addEventListener('load', () => {
     if (localStorage.getItem('darkMode') === 'active') {
         darkMode.classList.add('active');
         modeToggle.classList.add('active');
-        langToggle.classList.add('active');
         desktopfolio.classList.add('active');
         body.classList.add('active');
         socials.forEach((socialIcon) => {
@@ -41,7 +39,6 @@ window.addEventListener('load', () => {
             createClickRipple(700, 600, false);
             setTimeout(() => {
                 document.getElementById('title').classList.toggle('active');
-                /* langToggle.classList.add('visible'); */
                 modeToggle.classList.add('visible');
                 desktopfolio.classList.add('visible');
                 moveDivAfterLoadAnimations();                                 
@@ -137,7 +134,6 @@ function moveDivAfterLoadAnimations() {
 modeToggle.addEventListener('click', () => {
     darkMode.classList.toggle('active');
     modeToggle.classList.toggle('active');
-    langToggle.classList.toggle('active');
     desktopfolio.classList.toggle('active');
     body.classList.toggle('active');
     socials.forEach((socialIcon) => {
@@ -162,10 +158,6 @@ function copyMail() {
     document.body.removeChild(tempInput);
     alert("Copied to clipboard: " + mail);
 }
-
-langToggle.addEventListener('click', () => {
-    langToggle.innerHTML = langToggle.innerHTML === '<h3>ENG</h3>' ? '<h3>ESP</h3>' : '<h3>ENG</h3>';
-});
 
 desktopfolio.addEventListener('click', () => {
     const overlay = document.createElement("div");
