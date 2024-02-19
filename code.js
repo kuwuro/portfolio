@@ -186,6 +186,8 @@ desktopfolio.addEventListener('click', () => {
     }    
     setTimeout(fadeToBlack, 0);    
     overlay.addEventListener("transitionend", function () {
-        window.location.href = 'https://portfolio-desktop-navy.vercel.app';
+        setTimeout(() => {
+            window.location.href = 'https://portfolio-desktop-navy.vercel.app';
+        }, 300);
     });
 });
