@@ -176,7 +176,7 @@ desktopfolio.addEventListener('click', () => {
     function fadeToBlack() {
         overlay.style.opacity = "1";
     }    
-    setTimeout(fadeToBlack, 0);    
+    setTimeout(fadeToBlack, 50);    
     overlay.addEventListener("transitionend", function () {
         setTimeout(() => {
             window.location.href = 'https://portfolio-desktop-navy.vercel.app';
