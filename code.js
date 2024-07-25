@@ -112,12 +112,10 @@ function moveDivAfterLoadAnimations() {
             createClickRipple(e.clientX, e.clientY, false);
         });
         document.getElementsByClassName('bx-envelope')[0].classList.add('btn1');
-        document.getElementsByClassName('bxl-instagram')[0].classList.add('btn2');
         document.getElementsByClassName('bxl-github')[0].classList.add('btn3');
         document.getElementsByClassName('bxl-linkedin')[0].classList.add('btn4');
         setTimeout(() => {
             document.getElementsByClassName('bx-envelope')[0].classList.remove('btn1');
-            document.getElementsByClassName('bxl-instagram')[0].classList.remove('btn2');
             document.getElementsByClassName('bxl-github')[0].classList.remove('btn3');
             document.getElementsByClassName('bxl-linkedin')[0].classList.remove('btn4');
             document.querySelectorAll('.socialIcon').forEach((socialIcon) => {
